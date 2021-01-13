@@ -1,0 +1,30 @@
+Big Data Analytics Trends
+We are witnessing a paradigm shift in Data Environment. In recent years, Big Data has risen on the technology horizons and is under the aspect of efficient and cost effective management and analysis of vast amounts of data for both public and private organizations. There are several organizations, which are trying to harness this continuing data stream, and in 2014, several of these organizations will go about making this data available in real time. Any organization, that want to take advantage, no matter they are automotive, financial or healthcare concerns, the latest developments in the field of in-memory data management are blurring between, computing algorithms over operational data and analytical data between datacenters and data warehouses, there will be any of the medium term otherwise will more likely be eliminated entirely .
+
+Famous ETL or Extract, Transform and Load to or from some data warehouse – usually we otherwise call it ETL , Batch or any designed aggregation mechanisms, using Hadoop/Map Reduce or YARN are now found in resulting time delay and need to be replaced in 2014 by real time dashboards. Consider we are driving a car, our physical dashboard with odo meter, gas gauge, heat indicator, cd/aux/radio/FM player are with us no matter, how advancement we have seen in last several decades in our automotive industry. This physical dashboard has a significance, as long as we are driving humanly, we will need it, and you will agree here that we are processing data as our data environment (physical location of vehicle) is changing every moment, as long it is in motion, and our decisions are accordingly to stop at red light and be aware of a deer or a moose or any other animal/human crossing the road not hit it.
+This is data processing and it is in real time basis, if we are driving from point A to B between 8:30 AM to 9:00 AM, the following is our data environment:
+Location of vehicle
+- Vehicle Point A + 8:30:00 AM (Departure)
+- Vehicle Point + 8:30:01 AM
+- Vehicle Point + 8:30:02 AM
+-
+-
+-
+- Vehicle Point + 8:59:59 AM
+- Vehicle Point B + 9:00:00 AM (Arrival)
+
+We as human driver of this vehicle actually have extracted information in realtime from very first second at 8:30:01 AM, and executed the search algorithm of an identified object:
+
+Objects on Road
+- Vehicle Point + 8:30:01 AM + Vehicle X on the road ahead
+- Vehicle Point + 8:30:02 AM + Vehicle X on the road ahead
+-
+-
+-
+- Vehicle Point + 8:34:02 AM + Right Turn on the side road
+-
+-
+-
+- Vehicle Point + 8:59:59 AM + Start Pressing Brake
+This example suits on all of us dealing with a data stream, that need to be processed and some results need to be found (favorable or unfavorable are business decisions, only). 2014 and later years will be bringing a human-side or processing within algorithms written for real time data processing, as we have seen in the given example, as the time lapse happens the vehicle is not at any point during the motion, applies as it is on the data stream, due to its velocity, a conscious and informed decision on the basis of previously collected knowledge (about road/similar to some other neighborhood etc.) needs to be applied to find the golden needle in the haystack. Due to the more scalable data storage in main memory then both operational and analytical systems can share the same data and machine learning certainly can help.
+This integration of human-centric data environment processing will be allowing consumers to conduct their own analysis using the dashboards (which need to be available open source on smaller scales, obvious for consumer testing) and forecasts in real time based on operational data and generate real competitive advantages for companies will be the more likely in 2014 and beyond, which ever organization will not give this serious thought, will need to reconsider their prospects in the rising competition. In addition, entirely new business and functionalities will be opening in 2014 and beyond- for example in the area of dynamic pricing calculations for product proposals, risk assessment and planning, hospital assets and patients tracking etc.

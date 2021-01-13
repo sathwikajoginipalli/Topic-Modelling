@@ -1,0 +1,42 @@
+Machine Learning: An Introduction
+Machine learning deals with a computer learning from available or on-going available data as heuristics to produce a result in the shape of answers without involving a human being, once the machine learning algorithms are started to take over the system after Machine Learning System deployment process completes.
+There are several types of machine learning:
+•	Supervised learning -
+o	Regression analysis with continuous variables, Big Data is continuous.
+o	Classification analysis with discrete variables and are not continuous.
+a) Cancer/tumor cells size discovery
+b) Benign tumors discovery
+c) Breast cancer discovery
+d) Re-hospitalization of a patient on the basis of ‘a’ and ‘b’ or ‘c’
+•	Learning Theory -
+•	Unsupervised Learning -
+•	Clustering over data types
+o	Social Network Analysis
+o	Market Segmentation Analysis
+o	Astronomical Data Analysis
+o	Noise Reduction
+•	Reinforcement Learning -
+o	Sequence of Decisions
+We take the data as an example as Transaction and Interaction data. The infrastructure called Hadoop can take data in any shape in batch, via messaging or queues. Once this data (streaming or discrete) is in the system, it needs to be parsed. The parsers are available in the market; however it is a good idea to write your own parsers, this will give you an edge to process your data as you need, can be written in any language that supports both traditional relational and non-relational databases. This parsing allows data to take a certain shape, where the desired analysis can be done. Once the analysis is complete, you can write egress processes to send data back to the client or send it to data warehouse for any other utilization.
+This soft introduction of Machine Learning is to put emphasis on Linear Regression. The supervised learning or collection of data samples using any of the sampling techniques gets data sets related to a certain type of data to train the system to generated favored results. One of the examples can be the cars sold by several dealerships, and lately a big organization acquires all of these dealership and is willing to know the performance of sales in last 5 years, the system can be written (software designed, developed) in a way to produce the results by the least human time utilization on all the dealership data of past 5 years.
+These reports can be of type, which vehicles were sold and what were the prices and a price comparison of different dealerships, this comparison can give the new management a chance to look into the strength of sales people of different dealerships and a knowledge base about the most sold vehicles.
+Regression analysis is done on a test data with few number of examples, let us say data of used vehicle sales as mentioned earlier is streaming in to our clusters, and we have a knowledge base being built, that shows us the dealerships, which have sold and are selling the available vehicles for a certain monitory value. We can say that this data is “m”, where the input variable is “x” and output is traditional “y”. This means that the training data is a combination of (x, y) and the ith training example will be x raise to the power i so as y raise to the power i or can also be:
+(xi , yi)
+
+The training set is then fed to the learning algorithm, which generates hypothesis “h”. This hypothesis takes input of a vehicle and produces a likely selling price to be tagged at the vehicle. (This is a hypothetical example, to create an understanding, there are several other variables associated with a vehicle sales, however to make this article easy to grasp, this example is being utilized.) The hypothesis will give the value using the given formula in linear representation:
+h(x) = S0 + S1 x : where S is the variable with subscript numbers of variables
+            
+This data set that we used in training can be expanded by adding one more variable, that how many people this vehicle can seat at one time. This means:
+X1 = denotes the type of vehicle
+
+X2 = Numbers of passenger seats
+In this case the hypothesis will be:
+h(x) = S0 + S1x1 + S2x2
+This can also be written as:
+hS(x) = S0 + S1x1 + S2x2
+
+hS(x) => This is the hypothetical sales price for a certain vehicle with given variables.
+h(x) = Σ S x : This equation tells that there are only 2 variables taken to predict price.
+h(x) = Σni S x : This equation tells that there can be “n” variables also taken to predict price.
+	Whereas “n” is a number of features that are taken in to consideration as variables to predict the sales price.
+This example can be applied to property market, whether it is housing property or commercial property or even stock exchange, however stock exchange has variables attached, which are also streaming and ever changing that is why the prediction is not always reliable.

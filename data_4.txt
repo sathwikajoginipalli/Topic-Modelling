@@ -1,0 +1,394 @@
+The crisis in banking industry and the prevailing economic downturn in last couple of decades have put the mortgage market in turmoil. The breakdowns of the marketplace can be attributed to numerous factors. Most imperative ones are irresponsibility and lack of scientific astuteness about market conduct and upcoming trends. More prominently, a disparate methodology to decision making has often led to the collapse of the system resulting in bankruptcy of various enterprises. Analyzing available data to gain insights that help in decision making is the call of the era. While the availability of data is not often a challenge, the right usage of data has often faced road blocks in terms of boundaries of systems, lack of processing power, slowness of dispensation and/or a lack of application of scientific analytics to business. This paper aims to analyze some of the potentials that have emerged due to path breaking knowledge and amalgamation of business and scientific analysis. This paper will look at better verdict making competences and business prospects that could develop through the use of Big Data analytics in the mortgage sector.  
+
+Key Words: Big Data, Business, Challenges, Dispensation, Technology
+
+1. Introduction
+
+Every single day, business realms keep expanding and the need for true business analytics grows till it becomes an invisible string that ties data with business in a partnership. For smaller enterprises, the need for agility is higher and technology pretty much keeps up with business expectations. However, the same is not true for relatively large enterprises as they struggle with legacy issues. With volume being the key constraint, provisioning the data on time for business analytics and reporting is the biggest challenge for major enterprises. With the US and Europe still reeling under the economic crisis, credit and mortgage are playing a key role in the economy. In the US Banking and Financial Services industry, Office of the Comptroller of the Currency (OCC) and other regulators are pressing hard for details around exposures (mortgage debt, home equity line of credit (HELOCs), credit card, commercial loans) with a much quicker turnaround time than previously. Additionally, there are heavy penalties if errors are discovered in the data reported. With increased focus on foreclosures and their impact on the overall economy, US banks have created specific units to work through bankruptcy and foreclosures related challenges. At the same time, with the introduction of new government mandated programs for mortgage/HELOC products, there is an increased flux of changes in business processes. These changes again come with stringent timelines for implementation. However, the main challenges lie in accessing the right source of data and building scalable platforms that can provision and enable analytics. 
+
+Existing IT architectures face challenges and scalability issues. Struggling with legacy issues, various business processes run in disparate applications managed by multiple IT groups; the applications also have convoluted dependencies with each other. With challenging deadlines, the IT groups struggle to inform other groups on how one application might impact the business process on other applications.
+
+Some applications have moved to the cloud (Sales Force - Case Management, CRM), but integration and large data movement still remains an issue. The other bigger issue is around exponential data growth. Regulations mandate maintenance of account holder information in the system for seven years. Consequently, the data would keep exploding at all levels, starting from origination, underwriting, fulfillment, servicing, modifications and post-closing to bankruptcy, and foreclosures. Undertaking deeper trending analysis necessitates that data be maintained forever (E.g. reports that need to provide details of losses at borrower and loan level, fees that were charged to the customer during the life cycle of a loan). In these cases, it is expected that the data for inactive loans is also stored for detailed analysis which adds to the volume of data which has now reached terabytes. Regulators have also started requesting for relevant loan documents at each loan processing stage to check if loan processing adhered to rules.
+
+With regulatory compliance issues driving the demand for improving time-to-market, archiving the data to tapes and retrieving for reporting is costly. This means, data sources would have to maintain historical and transactional history online. As a result, there would be no reprieve for analytical applications which would have to run their queries on large databases for hours and may not have access to the data required for analysis.  
+
+2. Background
+
+As per the research conducted by the Gartner Research, [1] the global resources of data warehousing currently available at various data centers around globe and several business intelligence solutions provider’s managed data, such as Oracle, Microsoft, Yahoo and Google was predicted to attain in 2011 the amount of US$10.8 billion.
+Background
+A Cloud Data warehouse is created to hold snapshots of production data used for business trending and analysis using SOA, this can be implemented by using SRD described by SOA 3.0 [2] to adopt and work around to establish and create a Cloud Data warehouse. In the contemporary world of business today, it is vital for Cloud Analysts to look deep into a business to formulate the objectives, which is obviously the desired business goal that can be achieved by the Cloud Data warehouse. The first step can be taken as to start a brainstorming session with the related stakeholders of the business needing a Cloud Data warehouse. These stakeholders should be corporate project sponsors, subject matter experts and technology experts associated with the business requiring the Data warehouse.
+The storage is the cheapest most utility available and this utility has introduced data related challenge for all related stakeholders. The management of this ever increasing data has scalability beyond imagination due to the electronic use of services, such as B2B, B2C or B2B2C for e-Commerce and such similar challenge is standing for educational institutions of managing large amounts of research data, which we also call as Big Data. The ever increasing data is being accumulated by the use of all sort of electronic gadgets that we use in our daily life and are now pervasive to us, and we all are feeding databases of such organizations, such as facebook etc more than several petabytes on regular basis. The Economist reported in 2010 that there were 4.6 billion mobile-phone users using on global basis and over 1 to 2 billion people were subscribers of the internet [3]. This means clearly that in 2012 we are living in data explosion, which is rightly called Big Data.
+This becomes a sound reality that we can use service oriented architecture to use by running several services under monitoring of several master services as utilized by map-reduce [4] or Hadoop [5]. The Apache Hadoop software library provides us the framework to process on distributive basis of large data sets (Big Data), which are available or stored on clusters or virtual clusters available in Cloud [5], by some organization. The library can handle failures during this humongous data processing for any analysis needs requested by some stakeholder(s).
+We can say that Big Data can be considered in simple words: telecom connection data, statistics of public private intranet and internet sites, RFID enabled logistics data, utility, such as water, energy consumption, financial organizations referral data, such as banks, insurance companies , health and related prescription data, architecture simulation data and atmospheric scientific data, drug discovery for any cure, biological, archaeological, geological exploration data, nuclear physics, molecular biology. All steps associated of the processing – from capture and storage to analysis and visualization are some of the factors, which are posing enormous challenges, but also opportunities to achieve a competitive advantage and for the development of new business models.
+This gives rise to a perfect business case for Big Data products and leveraging its analytics to realize business benefits. Big Data technology applies the power of massively parallel distributed computing to capture and sift through data gone wild – that is, data at an extreme scale of volume, velocity, and variability. This is where the open source Apache HADOOP software framework helps by offering advanced analytics using distributed file systems for analyzing structured and unstructured data. But HADOOP alone does not provide database services, it would need to be combined with NoSQL databases to facilitate the map-reduce framework which otherwise would be very cumbersome to implement in Java, C++ or Python. There are few other relational databases which implement the Map Reduce framework (e.g. Teradata AsterData) that have demonstrated the ability to be able to crunch huge amounts of data and provide analytics.
+
+3. Proposed Analytics Framework
+
+The HADOOP framework should be used to build a centralized hub (Operational Data Store) for storing and managing transactional data. However, the master and reference data should be stored in their current database platforms. The transactional data should include the loan application movement from origination through underwriting, fulfillment and servicing. The other miscellaneous transactions should include other critical events relating to fees, credit reversal and loan modification. The ETL processes of eCommerce transactions should also be moved to HADOOP based solutions. Additionally, other consumer transactions - deposits, cards, trading transactions, and high value investment - should also be brought onto this centralized hub.
+
+These transactions would be huge in size and HADOOP, by virtue of its huge data crunching ability, would be able to maintain and manage this data. This platform would have to evangelize across different groups and would serve as data as a service for multiple applications. The current application would not have to migrate onto the new application and can continue leveraging the existing database platform. For transactional data, banks would be able to connect onto the HADOOP platform and existing ETL and analytical frameworks would not have to be modified. Also, a summarized view can be moved from the HADOOP platform to relational database where reports could be pulled out using existing COGNOS/MicroStrategy/SSRS tools. With all the transactional data available on a single platform and analytical power provided by Hive and HBase, organizations could look to transform the data to gain actionable business insights.
+
+ 
+Figure 1: Consolidation of transactional data in a single hub
+While Big Data directly advertises the volume, velocity and variety of data processing, the most important business use comes from the need for sampling data. Big Data solutions can be leveraged to run analytics on existing data along with the possibility of new sources of overlaps (like market data, sourcing agency, tribunals) to come up with intelligent decision making opportunities. The use cases given below are probably limited examples of the scope of Big Data analytics. Taking mortgage data consolidation to the next level, Consumer to Business (C2B) transactions across multiple lines of business will help better understand consumer cash flows enabling capture of Business to Business (B2B) relations through transaction data. On an average, the data in these transaction repositories can go over 200 million transactions/month. All in all, this enables client centric analysis using Big Data. 
+Similarly, there is a potential correlation between delinquencies, liquidations and customer's credit score changes. FICO offer analytics to help predict strategic defaults by a borrower. This analytics requires data for the calculation of FICO Score, utilization percentage of credit card, retail balance and home price depreciation. There is a need to understand if a borrower is up to date in his repayments in other accounts such as credit card, auto or HELOCs, but delinquent in real estate.
+
+ 
+Figure 2: Full Spectrum
+
+       Despite US banks executing Loan Modification Programs to help borrowers to recover, there is a considerable chance that a borrower may not be able to make all payments during the three-month trial period. An analysis of borrower data including his FICO score, credit card and other loan transactions would help anticipate and predict such situations. Most banks have set up a dedicated case / relationship manager to manage defaulting borrowers. These analytics would help them to understand the situation better and provide better assistance to borrowers. 
+
+      The answer is to get ahead of the problem by allowing banks to work with borrowers to find a solution to loan delinquency, help provide alternative solutions to foreclosure and tackle default risk proactively. Banks should leverage predictive analytics to identify situations where risk of default is imminent and take appropriate action to avoid the high cost of foreclosure. By acting early and optimizing the remediation treatment for each borrower, banks can significantly reduce default and improve the existing traditional and manual approach to loan modifications. This would serve as an early warning system at the borrower level.
+
+4. Risk Management
+
+       Banks in the USA have started building delinquency data models that can help predict loans likely to become delinquent in the next three – six months and help initiate proactive action. However, this delinquency model requires analysis of the customer transaction table (~ 1billion rows), combining it with the fees transaction data (~800 million rows) and borrower and loan relation data (active as well as archives). Such analysis consumes significant processing power and Input/output (I/O) and cannot be provided in real time. Moving this processing over to Big Data solutions can save CPU costs.
+
+      When it comes to Credit Risk Management, the appraisal process may not be able to access all the details pertaining to property, borrower’s current portfolio with the bank, undisclosed liens, property and tax liens, judgments and child-support obligations, and bankruptcies. In most credit reports, data is refreshed only once in 60-90 days which means there is a critical missing piece in the appraisal process. This data can be made available via alternate sources (e.g. CoreScore –FICO) and can be merged into the existing scoring process. The existing scoring process can also be tuned to incorporate payment trends as noticed for other products. 
+       Large banks in the US have initiated transfer of servicing rights to sub services for specific default loans. However, identifying loans which would have to be sub serviced is a challenge as this requires detailed analysis of the history of the loan, borrower and the loan documents available in the Document Management System. The analytics require a thorough understanding of the payments made by the borrower, number of 30 day, 60 day and 90 day delinquencies at the loan and borrower level and the documents available in the system to review the transactions. By building an automated analytics program that runs over huge transaction logs and groups them at borrower and loan level would help create ability to identify the loans that could be sub-serviced. The analytics can also help identify the gaps in terms of available loan documents in Document Management Systems. This would enable intelligent prioritizations based on an analysis of borrowers’ propensity to default.
+
+Currently, banks execute this process manually and it takes roughly seven-eight weeks to decide if a loan can be sub-serviced. With predictive analytics this can be reduced to two-three weeks. Banks have struggled to identify mortgage frauds despite availability and easy accessibility of most of the relevant data. Some mortgage frauds that can be prevented are:
+•	Essentially, banks need to leverage predictive analytics to help create heat maps that identify regions that are known for mortgage frauds with details available at zip code level. This will enable effective analysis when appraisal process is being conducted for a new loan application.
+•	Most banks have a process in place for identifying households that are consumers of their products. Taking the solution to the next step, banks can analyze transaction logs for all their products and identify spending trends at the household level. This will enable a better view of the end customer’s true ability to pay back loans and identify future cross selling opportunities.
+While there are use cases for applying mortgage data analysis, implementation of Big Data projects also face several challenges that could potentially delay their implementation. Some of these challenges are: 
+5. Types of Fraud 
+
+      There are three types of major frauds that we can look into:
+
+a) Property Valuation Fraud – This impacts Loan-to-value Ratio (LTV) and hence the underwriting and Loan Modification Process are impacted. LTV can be predicted by adding alternate source and enabling cross verification with the collateral value provided during the appraisal process.
+b) Occupancy Fraud – This impacts interest rates of loans. This can be prevented by identifying borrowers who have multiple real estate properties and leveraging data that provide details on landlord/tenant and eviction data.
+c) Short Sale Fraud – As more and more servicers are leaning towards short sale, fraud detection has to become more relevant and up to date.
+
+Talent Acquisition: Big Data analytics is complex and requires the knowledge of Data Analysis tools and Big Data solutions. Finding suitable resources is an industry wide challenge. HortonWorks, Cloudera and a few other Big Data solution providers are offering certification programs but the supply is not able to match demand and the gap is widening every day. Large organizations also struggle to identify and cross train their existing staff in Big Data analysis as resources require both technical knowhow and good understanding of Big Data Solutions and Analysis
+Methodologies. Further, trained resources are susceptible to head-hunting by competitors.
+
+Big Data Analysis Solutions are in Incubation Phase: Data Analysis requires understanding of Pig, MapReduce concepts and Java programming in addition to SQL. These concepts are new to the market and organizations are still learning how to include them in their associate cross training programs. Unless there is a stable framework that can reduce the learning curve for data analysts, adoption would be slow.
+
+Cost of Opportunity: Mortgage banks and servicers already run loan origination, fulfillment and servicing applications as well as data warehouse appliances. Moving the processing to a new solution requires business case along with funding and senior management approval 
+The idea of a holistic analysis is what the Enterprise Data Warehouse was always about. For many, true business analytics has been an elusive dream. Large organizations already possess huge amounts of data about their customers and products and it is just a matter of using them in the right combination to deliver the right solution to the business. However, organizations struggle to provide access to the right data on a platform that would enable true analytics that would aid business with right decisions. Big Data based solutions have the capability to provide the right analytics; however, unless organizations make efforts to recognize the use case, bring the right talent together, provide funding to work on a proof of concept, they would continue to struggle with building a true analytics solution. 
+
+6. Conclusion
+
+As described in the paper, though there are tremendous advantages in using Big Data Analytics, there are yet many realistic problems which have yet to be solved. Analytics is an area, which can be considered as a union of several hardware and software platforms. There are several hybrid technologies being utilized to provide the services in the cloud as well by many service providers. This paper sheds light on few of the several issues dealing with Banking and specifically Mortgage industry issues and research work done to find suited solutions to resolve current problems. 
+
+A look at Business Intelligence
+The BI Analyst/Manager should look into population of interest (Retail/Healthcare/Medication Management/Condition Management/e-Commerce/Fashion/Social Impacts of some product or service), He/she should also look into the methods of collecting samples and later once the data architecture is defined, the methodology is needed to be designed to find the answers to the questions, that are needed to be answered for any business related impacts those can be achieved out of this BI research work.
+The Scope of the BI Research can be:
+•	Causal
+•	Correlation
+This is done to generalize the results to the population at large to benefit more customer base for the proposed product(s) or service(s). There are two ways we can look into data and these are:
+1.	Exploratory Data Analysis
+2.	Inference 
+Data Architecture
+The data architecture can be designed using:
+•	Observations
+•	Variables
+•	Relationship among Variables
+•	Data Matrices
+An important question is, what is Data Matrix and how we can define the relationship among observation and variables?
+Store	Fashion Designer	Products	Styles	…	Demand
+Kohl’s	Armani	Professional Suits	American	…	High
+Fred Myers	ABC	Summer Dresses	Hawaiian	…	Very High
+Target	XYZ	Fall Dresses	Toronto	…	Very High
+Walmart	DEF	Jeans	Suzie Sheer	…	Moderate
+…	…	…	…	…	…
+					
+
+Each row here is an observation and each column is representing a variable. There are several types of variables, let us see, how we can identify these, variables are:
+•	Numerical or Quantitative
+	Add
+	Subtract
+	Take Averages
+	Multiply
+	Divide etc.
+o	Continuous
+	Any numbers positive/negative
+o	Discrete
+	Any non-negative numbers
+•	Categorical or Qualitative
+o	Distinct Categories
+	0 – for – Males
+	1 – for – Females
+•	These are definitions of Data
+o	Ordinal Variables – There is an order in the categories:
+	Satisfied
+	Not Applicable
+	Not Satisfied etc.
+Let us explore our example:
+Store	Fashion Designer	Products	Styles	Web Hits per Week	Demand
+Kohl’s	Armani	Professional Suits	American	32	High
+Fred Myers	ABC	Summer Dresses	Hawaiian	63	Very High
+Target	XYZ	Fall Dresses	Toronto	78	Very High
+Walmart	DEF	Jeans	Suzie Sheer	96	Moderate
+…	…	…	…	…	…
+					
+
+Store variable is an identifier of the stores selling the Products, which are stocked by several Fashion Designers with their displayed products as per the Styles in demand and the demand that is there in the market place. If there are two variables, which are connected to each other, they are called associated or dependent variables. This association can be either positive or negative. If the variables are not associated, they are considered as independent variables. There are several formal approaches to find the dependence of variables, which we will explore later in this book.
+•	Store, Fashion Designer, Products, Styles – Identifier Variable
+•	Web Hits per Week – Discrete Numerical
+•	Demand – Ordinal Variables
+Now we have clarity about the variables, as this is the first step of any analytics to start with. It is vital for you to know, which types of variables you are working with or will be working with, this knowledge will allow you to choose right types of analytics to move forward with. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Observation & Experimentation
+Big Data is data that surrounds us. Usually people think this is a marketing gimmick, however this is the reality of our time, as we all are data users as well as producers of data on almost everyday basis. The word Big Data is combination of Big and Data, the term is massively being used by the industry to either market their services or products or to attract attention of general population. Usually Volume, Variety and Velocity are also tagged with Big Data as 3Vs, which show the amount of data in terms of Volume, diversified nature of data in terms of Variety, which also means different types of data, such as text, worksheet, document, a database, a video or an audio file. The Velocity is being utilized in terms of the data streaming, we can understand data streaming as the creation of data in social networks by posts and comments each post gets on the social media, etc. 
+Blogs are also another medium of data productions, which are the ideas, discussions, critique on some product or technology, videos posted on youtube, or any such media is also a data, which is streamed to an individual. Data is available in any type and shape, how we deal with it, is the core idea. An organizational data that deals with retail can be quadrupled in the days of vacations, or specific promotions that are launched to attract customers. This data is utilized to generate trends, which indicate the buying habits of different age people. On the basis of these trends data scientists can predict, what can be the next big thing/product/service for the organization to concentrate on for next of such an event to launch and increase in their profitability. Big Data has many facets to be explored in near future.
+The analytics team can collect data, while conducting an observational experiment to collect a sample of a certain population of data. This observation allows researchers/analytics to team find correlation/dependence of data variables between explanatory and response variables. There are two types of studies that we can do:
+•	Retrospective
+•	Prospective 
+Retrospective study is conducted on the data from the past, for example sales data from January 1 to 31st of the month of certain products in some defined States (North Dakota, Minnesota, Iowa, etc.). Whereas prospective study is done on the data, which might be streaming or live data, Big Data comes to play in both types of studies equally.
+The data assigned to several analytics procedures, which can institute variable connection on terms of causal relationship, if there is any. The analytics can be done using observation or experiment. Let us have a look at another example of a dataset of a group of students of a university go to gym on regularly basis and another group, which is more of computer gamers.
+Let us bifurcate two groups of students for the observational analytics purpose to fine the average energy levels of both students going to gym regularly and the students who are into computer games.
+ 
+Figure 1. Two types of Student Population for Observational Analytics
+For experimental analytics, this will be little different setting. We take a large sample of student population and conduct average energy level tests in random set of students. The segregated groups will be assigned by the analytics team to make group A to go to gym on regularly basis and other group B will be given computer games to play. 
+Once the analytics team starts to gather results, on the basis of observational analytics measures, the team will get results, by not including several other variables, such as eating habits, schedule promptness, gym activities, etc. The casual relationship among variables dependent or independent have their own impacts, which need to be studied also for the near to accurate results of energy levels of the participants.
+The relationship among two major variables of eating and the level of energy can be:
+ 
+Figure 2: Eating habits analytics
+•	Eating (+healthy foods {Another Variable}) can make energy level of a student higher
+•	Working out at gym consumes lots of energy and the students are eating in this case
+•	To have good health and maintain a great look a student can choose to eat and go to gym
+The variables we have discussed here have impact in some way to the selected population of students, the effect of such variables on both explanatory and response variables shows us the relationship in last bullet in the given pictorial example are also known as confounding variables. It is vital to know for any analytical system that the analytics team must make sure not to imply correlation onto causation. Observational analytics mostly allow the analytics system to produce correlational conclusions, whereas causation conclusions can be found by the inference.
+
+
+
+
+Use of Sampling for Analytical Reasons
+Let us look at sampling techniques using both census vs. sample, also exploring the sources of bias generation by visiting dew sampling techniques. An important question might rise from the section, we have just seen in the previous part of this book, titled “Observation and Experimentation”, and that is, why not we include all students in the analytics of energy levels results, however this is known in the terms of business intelligence analytics as census. To conduct such a study using entire available population will require several resources, which the analytics team might not have or might get with delays, which will destroy the objectivity for any BI Analytics for informed decision making. 
+Let us take an example of Big Data Analytics use of Map Reduce, which is a set of algorithm to map the requirements of an organization and reduce the results in required sets of classification or categorization. As we all know, that money plays an integral role in any of our industries, whether, it is retail, travel, healthcare or academics. In the era of Big Data, we have seen open source software/tools playing a huge role available to public for approximately free to learn. Big Data can be considered a decision making factor, thus inducing a wrong approach or algorithm of a population of data variables we are working with for any Business Intelligence Analytical needs to generate reduced results, when we use tools like Hive, Pig or Impala or the world of Map Reduce from any direction, which is not focused on certain optimized results can derail the prospects offered by these data.
+Let us have a look at some analytics in the financial sector as an example here, this presented example is in actuality a study which can be primarily used to create a holistic view for the stakeholders, searching the golden needle from the hay stack. This working example allows a more personalized approach to the factors influencing the choice of the target audience from a sample of total population for a business to focus on to uplift their services or products delivery than simply improving communication and other sales and marketing strategies to improve their organizational performance to generate better revenue stream.
+This example takes a bank serving on global basis, let us say ABC Bank, this institution uses its operational approach to Big Data to improve services provision to the clients and enhance reputation among multinational fields to generate goodwill, while earning better revenues. This study shows the use of customer service provided directly to the clients using e-mails between customer service and customers, who have some payments to be given back to the bank and are trying to avoid to pay either interest or buying in more time to create delays in their payments. This is a risk that every bank has to take while issuing its clients, no matter it is an individual or a business (small, medium or big) to the degree of such risk and/or different sociological factors in order to establish the best means of recovery of the debts that these clients get into.
+A set of algorithms can be written to help this bank by running in the streams of Big Data that this Bank has of the communication that has been conducted between customers and customer service in terms of over the phone discussions (Transcribed) and the extraction of emails, text documents. This methodology will certainly help the decision makers of ABC Bank to estimate the state of confidence of customers to the bank or distrust of the bank to the (particular) clients. This methodology is helpful for any organization, which is in the service industry of any type to assess the risk of fraud that can get the loss of revenue and can create a distrust among general population using such institution.
+The BI Analytics conducted on such Big Data can show trends, how the customers are feeling towards either bowing to the organization or repaying their debts, or they are trying to find a run not to pay the organization. This type of analytics will also be helpful for the organization to recognize, which of the employees are using influencing communique to the client to make them either pay their debt or start paying in installments to recognize these employees and create training material around these successful communication style to improve the performance to rest of the customer service providing employees to generate a harmony internally to bring most of the (about to be) lost credit, that can be helpful for future investments.
+This example details the idea of population in terms of the bank users, that they rarely stand still, they move, their requirements of products and services might change due to some other variables in their life, which are not directly relational or correlational to the banking services and products. The exploratory analytic techniques allow us to establish and inference on a selected population of a representative sample. There are few sample biases we should know that play crucial role in our BI Analytics and these are:
+•	Convenience Sample: Only Satisfied Clients of the Bank.
+•	Non-Responsive Sample: The customers sample selected as a whole to ask, how bank is performing, however only a very miner population of customer sample is asked, this means we have deliberately left several lower socio-economic population of banking customers of the population to perform analytics and this non-responsive sample data resources are gone as waste. 
+•	Voluntary Responding Participants: These are the sample of total population, who is willing to share their opinions about the banking services and products they are using.
+There are three major types of samplings and these are:
+1.	Simple Random Sample
+2.	Stratified Sample
+3.	Cluster Sample
+Let us have a look at each pictorially to understand, the first one is simple random sampling, in this we take sample on random basis from a population (retail of books, some hospital’s patients, service users of some telecom or ISP {Internet Service Provider}, etc.), such that each case is equally likely to be selected, it is like randomly drawing names from a lottery box with name slips in and is shuffled by a random person to select names out for prize winners. [01][02][03]
+ 
+Figure 3: Equally likely sampling from a huge population
+Second set of sampling is known as Stratified sampling and is shown in figure 4. The sample is distinguishable in homogeneous strata [04], once this strata is agreed upon, we randomly select sample from each strata to conduct our analytics for favorable or unfavorable results to make the organization informed decisions to increasing sale in some area, where as increasing marketing effort in some area or do the damage control, that might have been done due to some wrong marketing campaign, which might have been chosen at random also.
+ 
+Figure 4: Stratified sampling
+Let us look at the last type of sampling, which is known as cluster sampling [05][06][07]. The population is divided among clusters, we collect random samples from few of those clusters, and randomly later sample from within those clusters, you can see at the example given in figure 5.
+ 
+Figure 5: Clustering
+The cluster samples can be: 
+•	Books sold of certain genre.
+•	Cellular services utilization
+o	Minutes
+o	Internet usage
+o	Social media utilization
+•	Patients admittance at certain hospitals
+•	Sales of products
+•	Services decline
+•	Medication management in long term care facilities
+•	Travel patterns 
+•	Social media impact
+•	Geopolitical Analytics
+•	And more…
+
+
+
+
+
+
+Big Data Analytics: Experimental Design
+Let us explore what experimental design can help us with the area of Big Data Analytics. Experimental design techniques are:
+1.	Control
+2.	Randomize
+3.	Replicate 
+4.	Block
+As per Yale [08] “An experiment deliberately imposes a treatment on a group of objects or subjects in the interest of observing the response. This differs from an observational study, which involves collecting and analyzing data without changing existing conditions. Because the validity of an experiment is directly affected by its construction and execution, attention to experimental design is extremely important.”
+The experimental design usually allow us to look into the trends using Scatterplots as shown in Figure 3, 4 and 5, histograms. The trends can be up wards, downwards, horizontal or vertical showing different tendencies and densities.
+Data visualization is also done in the following manner to show the trends using histograms by watching skewness.  
+ 
+Figure 6: Left Skewed Data.
+ 
+Figure 7: Symmetric Data
+ 
+Figure 8: Right Skewed Data
+The data distribution can also have modality associated with it, which means it can be:
+•	Unimodal
+•	Bimodal
+•	Uniform
+•	Multimodal
+This means, there can be only one peak that we can notice, it can be Valentine Day sale of some store or product, and Bimodal has two peaks associated with the data, due to some effective advertisement, use of some online service might have shot twice in one day of Superbowl in afternoon and in evening, which can be some Pizza deal that was advertised on local cable channel before the start of the game and in the half time, can generate a Bimodal or two peaks in the sales order of the pizza twice in one day.
+We also can monitor a Uniform trend of cell phone usage in a certain area or city, no matter what ever is the occasion.  There are possibilities that we might observe on our histogram a Multimodal peak trend with several peaks within a defined time.
+There are few of the given types that we can use to visualize data for any decision reasons, and these are:
+•	Scatterplot
+•	Histogram
+•	Dot plot
+•	Box plot
+•	Intensity Map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Case Study: Analytics Project Management
+Service Governance and Security
+Let us look at a combination of services of an organization in shape of a building built using designed service blocks. These services follow some specific set of rules and regulations to process any requests. These rules are provided by the policy makers of all stakeholder organizations. Regulations are also important an element of the service processing according to the law of the country is a vital part to be followed as well to conduct proper business activities. 
+Data and Service governance deals with a central repository of services information for any future reuse, also dealing with the rules defined by the policy makers and regulations of the country, where the service is being provided to ingest or egress data. A good example can be AMAZON.COM caters books and other merchandize for USA, and AMAZON.CA serves Canadian customers. The governance also deals with the patterns of the use of these provided services and it also removes duplication of the interrelated messaging among one enterprise wide use of services. 
+Service Governance
+It is a most important task of a BI Analytics Team (BI-AT) to make sure that they gather all relative information from business policy makers at the initiation of a service design. It does not matter that a service is designed for a unit of an organization or for several organizations. This important task is data and service governance. 
+ 
+Figure 9: A BI Analytics Model of involved stakeholders
+
+It is clear from the figure that there are several stakeholders in different business capacities involved in a BI Analytics solution design. The uses of demand for alteration or DFA by the BI Analytics Team (BI-AT) in consideration of following key points can get all of the stakeholders a properly running service.
+•	Service design initiation should start after all related defined policies are studied by BI-AT (BI Analytics Team) carefully with an agreement consent taken from all stakeholders.
+•	BI-AT has to consider this agreement as tentative as the policy change during or after service design can have an impact on service design or use.
+•	Services are to be delivered with an ownership to either one or a combined team of stakeholders to govern.
+•	Policies need to be embedded in service and data processing.
+
+The governance of services and data needs to be secured. This point involves the security of the service(s) to process any data. The deployed services “A” need to be monitored and this monitoring can either done by a management team or by another service “B” that has all rules and regulations in place in the processing phase of a consumer’s request processed by the deployed service “A”.
+A successful BI-AT service project can be considered as a success of all stakeholders. A service will be faster and efficient, if it provides:
+•	Ease of use
+o	User friendly interface
+	Clarity of request inputs
+	Acknowledgment of inputs
+	Error messaging
+	Input help availability
+o	User feedback interface
+•	Information Hiding
+•	Policy based data processing
+•	Fault monitoring
+o	Service and Data security
+o	User error detection
+o	Software application error detection and logging
+o	Hardware error detection and logging
+
+Operational users of an organization or a consumer using these services are to be provided quality and secured services for their use and reuse.
+
+Service Security
+The services are designed to transfer important information in the form of messages from a Service A to System X or from a Service A to Service B and these messages are transferred usually on high security independent network to other external networks. This messaging between can render the use of services to information leaks and intrusions by hackers or hacking agents. These hacking agents are also in the form of services, we can call them for hackers hacking services to get to certain information, which might be used in an unwanted activity for the organizations or against the law. 
+This is the main reason that the policies describing security rules for the service control should be very strict in general. A security service can be introduced and embedded in all BI-AT provided solutions to provide a pre-approval for all messaging among services as mentioned above for both data ingestion and egress processes. The jobs of this Messaging Security Service or MSS designed in this case study by our BI-AT (Business Intelligence Analytics Team) can be as follows:
+•	MSS is to establish the protection of messaging, as various services might are directly connected to external networks. 
+•	MSS should be able to clearly differentiate among authorized messages for external transfer from those messages, which cannot be allowed due to a predefined non-shareable security policy. 
+•	MSS should be able to use an encryption technology to prevent the creation of false messages.
+
+BI-AT has to select a secure operating system that safeguards from external intrusions. This operating system should consist of service generated messaging transfer with security process management functions. It is the job of policy makers to work with BI-AT to establish rules to validate and classify internal operational users and service monitors. This classification of operational users and service monitors is prerequisite to allocate responsibilities for user actions, in handling day to day service logging and managing error reports to get corrected by IS/IT departments. 
+Messaging Security Service Model
+Our BI-AT proposes a Messaging Security Service MSS model, which is pictorially represented in the given figure 10. This model contains a life cycle of MSS with a design time involvement of human factor.  
+
+ 
+Figure 10: MSS Security Service Design Life Cycle
+
+The threats can be both external and internal. Policies are to be discussed by BI-AT and policy makers in relation to the services is one of the vital tasks to be completed during the design time of the service to establish an MSS.
+•	Threats: Few threats can be classified as follows:
+o	Denial of Service or DoS [68, 69] is the unavailability of services. The systems responding to such attacks can also be crashed. DoS can also be understood as a flood of requests to a service with more requests than the service can manage to serve. 
+o	Dictionary Attacks [70] are a common way to crack a service to gain an unauthorized access. Attackers constantly use common usernames and password combinations to gain access of the service of weak username and password combinations. 
+o	 Code injection [71] attacks are comparatively uncomplicated and generally involve some acquaintance of technology the back end system is using behind the service interface. A malicious code is injected by a service hacker to take the service control, by changing its security parameters, some hackers are also tend to disclose these parameters for other attackers. As a result, several hackers and attackers either hijack the service or monitor it. 
+•	Policy is a vital part of MSS (Messaging Security Service). It is a very well understood fact that the dependence and an increase in the use of Service Oriented Architecture (SOA) by our BI-AT in critical IT/IS projects of our industry need an inclusive security policy developed. A service security violation can cause serious legal, non-lucrative issues damaging the perception of an organization. The development of SOA solution’s security is suggested by SOA 3.0 as a primary consideration when establishing communications between all involved stakeholders and Cloud service providers. Services Security Policy [72] is defined as a meticulous set of base contentions unfolding the privacy and reliability guarantees supplied by encryptions and signatures established within a message.
+•	Specification phase of an MSS model contains all the information related to probable anticipated threats and a completed security policy combination provided by all stakeholders, which leads to an infallible security service design.
+•	Security Service Design is a model of a precisely planned security approach of the SOA solution, that puts its focus on the three fundamental principles given below:
+o	Confidentiality 
+o	Integrity and 
+o	Availability 
+•	Once the modeling of a security service is complete, it needs to be implemented and this implementation needs a continuous revisit of Service Security Admin to add any new threat levels, if found during the study of the feedback of use of services. This is also a prime job of security admin to operate and maintain the security policy as being cautious to any probable inner as well as outer attacks that might introduce DoS.
+
+Empirical Analysis
+An empirical analysis is presented here, which shows the calculation of the probable service failures, attacks by hackers on services and the success of the deployed services using Poisson distribution.
+Services Failure Prediction: The given calculation is for the probable attacks by hackers on services or the failure of some essential element of the service that can be a key data transmission mode, such as a router or failure of a data storage server of web services used in a cloud using Poisson distribution. This type of distribution is suited to find the attacks or service failures as occurrences by some hackers or by some unknown causes over a specified time interval. Let us see the Poisson distribution notations:
+“x” (Random variable) = number of attacks in an interval
+Or
+“x” (Random variable) = number of service elements failures in an interval
+The Poisson distribution function is defined as follows:
+f(x) = e-λλx / x!
+There are few elements associated with this distribution function, λ is the mean and the standard deviation of this mean is also associated. 
+Mean = λ
+We will be using Poisson distribution to approximate the binomial distribution in the given set of rules for attacks or failures as described in the start of this section.
+n>100	n is number of occurrences of attacks or failures
+   np<10	The probability of success of these occurrences is np
+We will be using Poisson distribution with λ = np. These tests are performed on the data provided by an ABC Cloud service provider or ABC-CSP, which reports that over 20 months’ time period, 196 service failures in total occurred of data communication and data server shutdowns happened, we can find the mean number of service failures per year:
+λ = 196/20 = 9.8 Failures happened per month
+Now we will try to find the probability, how many service failures might be probable next year for our service provider?
+f (x) = (9.8)x . e -9.8 / x!
+In case there are no failures next year, we will put x = 0.
+f (0) = (9.8)0 . e -9.8 / 0! = 0.0000555
+Let us find out, if there are 5 failures are predicted next month.
+f (5) = (9.8)5 . e -5 / 5!
+f (5) = 0.042
+ 
+Chart 1: The expected failure of next month
+
+Let us consider another example for the given Cloud Service Provider; Poisson distribution is used to find the probable number of attacks on that ABC-CSP in the year. We are going to work on the given conditional hypothesis:
+•	Provision 1 seems practically rational; that the chance of the CSP is being attacked seems likely to be about the same for each day during the year. 
+•	Provision 2 also seems practical; that an attack is independent of another attack.
+•	Provision 3 is also in all satisfactory probability, unless these hackers are prone to go on rampages and launch all sorts of attacks, such as DOS, dictionary attack at once. 
+
+Thus it is expected that the Poisson distribution can be used for this type of data modeling. The data in Table A are based on the 280 services and weeks combinations (14 services in each of the 20 weeks of the study). For the ease of understanding we will deem these services to be 280 different services, each observed for one week. For each service, the number of attacks within the week was recorded. As we have the data available of these 280 different services, an empirical analysis can be done of what the probabilities are for 0 attacks per service, 1 attack per service, and this list goes on. 
+f(x) = e-λλx / x!     where    λ = 14/20 = 0.71
+On average, only 0.71 attacks per service in this manner per week. By applying Poisson distribution following data have been generated for a graphical representation to understand the trend in Table A of attack on the services.
+ 
+Table B
+ 
+Chart 2: Attacks depiction on mean is 0.1
+ 
+Chart 3: Attacks depiction on mean is 0.7
+ 
+Chart 4: Attacks depiction on mean is 1.0
+
+ 
+Chart 5: Attacks depiction on mean is 5.0
+Success of Services Utilization
+Let us consider another hypothetical example; in a Cloud data center 2 services are being used every hour on last Monday. What is the possibility that exactly 3 services will be used at the exact same hour on next Monday? 
+e-λ = ?,  where λ = 2,  e = 2.718
+
+e-λ = (2.718)-200
+
+e-λ = 0.135
+
+λx = ?,  where λ = 2,  x = 3
+
+λx = 23 = 8
+
+f(x) = ?,
+
+f(x) = e-λλx / x!,
+
+f(3) = (0.135)(8) / 3!
+
+f(3) = 0.18
+
+The use of 3 services on the same hour on next Monday has 18% possibilities.
+Conclusion to the Case Study
+There are several methodologies currently being utilized to design web services, such as UML, BEPLWS etc., and creation of BI Analytics reporting and the use of any of these needs a good knowledge of the notations associated to these approaches. This case study used a novel and an uncomplicated software engineering methodology, called SOA 3.0, which was created at MIT using SRD or System’s Requirements Design methodology. It is complete system engineering, architecting, and system lifecycle modeling approach that can be used by the software engineering community to achieve the desired results for any stakeholders desired web service(s) expeditiously and as accurately as possible. The work done in this case study also provides another framework to observe a successful service for message passing or Big Data processing in a secured way. The issues related to data and services governance as well as security, are given to clarify the need to resolve during a service design phase. An empirical analysis of services failure, attacks on services and success of services is provided using Poisson distribution to explain, how Business Intelligence Analytics can take advantage of histograms and probability distribution. The results show a trend of service failures of a Cloud service provider and the success probability of web services performance.
+
+
+

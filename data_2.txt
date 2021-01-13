@@ -1,0 +1,120 @@
+Abstract— Sentiment analysis over the social media data provides organizations with real time information on the public opinion on trending events. In this paper we have presented the idea of analyzing the Twitter data related to a sporting event, specifically the ACC Basketball Tournament.  We found that beyond sentiment analysis of the tweets, the metadata can also be a source of insight. The analyses of these data can help businesses that has a stake in the sporting industry a better understanding of their existing or potential customers.   And use that understanding in creating better products, and advertising campaigns that has wider reaches.
+I.	INTRODUCTION
+The online social networking service that is Twitter is a very popular means of quickly expressing opinions, ideas, and stories. These short 140-character text, called tweets, can encompass the mood of the moment. These mood or sentiments have been found to have quantifiable relationships on macroscopic socio-economic events such as the stock market and the outcome of a political election [1]. These sentiments and meta-data can provide insights for companies who are re-evaluating their marketing strategies to develop a more customer-centric advertising campaign that would cater to today’s media savvy customers [2]. 
+Currently, Twitter provides advertising platforms for businesses via the Promoted Tweets, which are ordinary Tweets that advertisers purchase to reach out to their target audience. Recently, Twitter provides Promoted Trends that is an extension of the Promoted Tweets, where users see time-, context-, and event-sensitive trends promoted by Twitter’s advertising partners [3].
+Today’s businesses are looking at different channels to reach a wider audience to either keep existing customers engaged or attract new customers. In Section 6, we look at ways that advertisers, and marketers can utilize Twitter data. 
+In this paper, we explore the different analysis that an application that will forward Twitter data on a specific sporting event can do; and we present ways that those data analysis can be used for. For our case study, we look at Twitter data from the ACC Championship tournament on March 14, 2015. Section 2 will present the detail of getting and storing the data. We initially started out with the analysis of the data to explore if there is a relationship between the number of tweets and sentiments of Tweets and the teams' performance, which will be presented in sections Section 3.  Section 4 presents analysis done on the meta-data of the tweets. In Section 5, we also look at the description of the Twitter users who tweeted to get a glimpse of the by analyzing the user’s profile.
+II.	FORWARDING THE DATA FROM TWITTER
+A.	Crawling Twitter Data
+Users on twitter generate around 400 million tweets every day, some of the tweets are available for research through public API’s.
+APIs to access Twitter data can be classified into two types based on their design and access method:
+• REST APIs are based on the REST architecture2 now popularly used for designing web APIs. These APIs use the pull strategy for data retrieval. To collect information a user must explicitly request it.
+• Streaming APIs provides a continuous stream of public information from Twitter. These APIs use the push strategy for data retrieval. Once a request for information is made, the Streaming APIs provide a continuous stream of updates with no further input from the user.
+We did our data pull via the Streaming API, using the filter ACCTourney for the time span around the championship game.
+B.	OAuth Handler
+Open Authentication (OAuth) is an open standard for authentication procedure provided by the twitter which allows the access to the protected information. The following steps are involved in accessing the twitter information:
+•	Applications/user must register itself to twitter, which provides consumer key and secret that can be used in future for authentication.
+•	The user authorizes the application by authenticating himself to Twitter. Twitter verifies the user’s identity and issues an OAuth verifier also called a PIN.
+The user provides this PIN to the application. The application uses the PIN to request an “Access Token” and “Access Secret” unique to the user.
+Identifying the location of a Tweet Location information:
+Geotagging information: Users can optionally choose to provide location information for the Tweets they publish. This information can be highly accurate if the Tweet was published using a smartphone with GPS capabilities.
+Profile of the user: User location can be extracted from the location field in the user’s profile. The information in the location field itself can be extracted using the APIs discussed below.
+C.	Storing Twitter Data
+The NoSQL database Mongo DB [4] is a good candidate to store the huge amount of tweet’s and other related information. Since the history of twitter information need to be stored and divided according to the timestamp, Mongo DB provides an efficient way to store the data through following features.
+Document-Oriented Storage: MongoDB stores its data in JSON-style objects. This makes it very easy to store raw documents from Twitter’s APIs.
+Index Support (Forwarders): MongoDB allows for indexes on any field, which makes it easy to create indexes optimized for your application. The indexes used in our case study are timestamp, geo stamp, team name etc.  
+Straightforward Queries: MongoDB’s queries, while syntactically much different from SQL, are semantically very similar. In addition, MongoDB supports Map Reduce, which allows for easy lookups in the data.
+III.	SENTIMENT ANALYSIS OF THE TWEETS
+We are interested in knowing the user sentiments and support for a particular team or the game itself. Based on  existing sentiment analysis research [5], we propose to extract sentiments in the following steps: Preprocessing the data, extracting sentiments from tweets, classifying sentiments
+A.	Preprocessing of the Data
+The preprocessing step contains removal of irrelevant data from the tweets and using the remaining data for sentiment analysis. The URLs and replies to users (@username) are ignored. We shall look at any emoticons, exclamation marks or capital words since they give more emphasis on the polarity of the sentiments. Articles, question marks, full stops, and other punctuations are also ignored and the tweet is made noise free for further analysis.  
+
+B.	Extracting Sentiments of the Tweets
+
+	Tweets are semantically simple. Hence we use an already established technique of lexical analysis [5] to extract sentiments. We take the Afinn lexicon [7] which contains a list of sentimental words and extend it to accommodate frequently occurring words in sports. On analyzing the tweets obtained over the games some words like “go”,”win”, “beat” etc. had frequent occurrence and hence were added to the lexicon. 
+
+C.	Classifying Sentiments
+We are interested if a tweet reflects positive, negative, or neutral sentiments. In order to do so we use the lexicon to analyse the sentiments of the words appearing in the texts. The nouns, adjectives, adverbs are collected and the score of the sentiments are calculated as per the lexicon. Examples of Positive Tweets: This is a positive sentiment for Notre Dame: “Congrats to Notre Dame on the #ACCTourney Championship”. Examples of Negative Tweets: “still can't wrap my head around @notredame being in the #ACC. even less their playing for #acctourney title. 😳 #oldschool”. Examples of Neutral Tweets: Go buy stock in Walmart!! T-shirt sales are about to go through the roof.
+
+D.	Analysis of Results
+By utilizing the methods previously discussed for Twitter data collection, analysis was performed on the final ACC Tournament game. The two teams were the UNC Tarheels and the Notre Dame Fighting Irish. By using text mining each tweet was tagged as either Notre Dame or Chapel Hill. Then with sentiment analysis, the tweets for each team were scored based on a lexicon and assigned a positive or negative score. Below shows the graph comparing the positive tweets for UNC vs Notre Dame over the time period of the ACC Championship game.
+ 
+Fig. 1 Notre Dame shows a significant influx of positive tweets near the end of the game, which is correlated to the fact that they won the championship.
+IV.	ANALYSIS OF THE TWEETS METADATA
+In this section we show the analysis done on the meta data of tweets. Twitter data captures and stores the geolocation of the tweets. Using Tableau, a heat map was created to show where tweets originated for each team.  
+ 
+Fig.2 the majority of the tweets were sent from North Carolina, where the tournament was being held.
+Twitter data also provides information on the platform and application the user tweeted from. 
+
+Fig. 3 The top platform was from a mobile phone, and the top source was from the twitter app for iPhone.
+
+ 
+
+Fig. 4 Top sources of tweets  
+ 
+V.	WHO IS TWEETING WHAT
+A Twitter user can write a brief self-description which is in the description field. By using this field we can get a glimpse of the users who are Tweeting about the topic that we are interested in.  Below are examples of such descriptions based on the data that was pulled on March 14, 2015 ACC Championship data:
+
+Junior. Digital Media & Photography double major. Aspiring sports photographer. Follow my photography account @lonwhlphoto. #EMU16 #Ephesians6:12
+
+GOD is #1. President/CEO Dan Tortora Broadcast Media. Sportscaster/writer with originality, comedy, & humility. #NCAA #ACC #AAC #Cuse #NBA #NFL #Jaguars #MLS
+
+Believer, happily married, dog mom to 3 loving rescue pups, legal asst, and gardener. NC native. Opinions are my own.
+
+Florida pax
+
+The ideal attitude is to be physically loose and mentally tight. - Arthur Ashe
+
+Of the total 3200 records pulled, only 2703 (84.5%)   have values in the description field.
+
+Some descriptions as above can be very useful for Data Mining purposes. An index can be built based on the words in the description that describes:
+
+Hobby or Occupation: photographer, photography, sportscaster, writer, gardener, legal asst
+
+Sports: Tennis (Arthur Ashe reference), Basketball, Softball
+Place: NC, Florida
+
+These tidbits of data can help a business know more about their target audience.
+
+However descriptions such as the following, from the same data set, can be of limited use or not at all:
+
+Hey.
+
+you know why im here
+
+it's the only thing i know
+
+
+Fig. 5. A Wordle visualization of user’s self-description
+ 
+
+VI.	APPLICATION OF THE TWITTER DATA ANALYSIS 
+These Twitter analysis can be combining into an application for companies to utilize. Data on tweets was forwarded to Tableau into an interactive dashboard
+
+Fig. 6 Interactive Dashboard
+ 
+
+ 
+
+
+ 
+
+It can be used for advertising marketing purposes. The advertising channel does not have to be via Twitter:
+
+- Ad campaigns in different channels can be geographically targeted to where most of the Tweets are coming from
+
+- Use retweets as a way to diffuse information [6] to spread your ad campaign. This would have to be a limited time campaign.
+    Example: Get free product if you retweet the ad 
+
+- Tailor ad campaigns to send directly to people based on their tweets, 
+Example: what team they are supporting, cheering for, hobbies, occupation 
+
+- A way for retailers to know what sports apparel to stock in their stores. By knowing what teams most people tweet about in their locality, they can have those team gears stocked in their stores. Say Charlotte, North Carolina does not have a local college team that is in the ACC or March Madness but if they see that a lot of people a positive sentiment towards Duke in the area, they can tap into that.
+
+VII.	CONCLUSION
+With the increase use of Twitter in social media, there is an endless opportunity for applications of Twitter analysis. We have shown the correlation between sentiment of tweets and outcomes of sporting events. Also, extracting information from the metadata of tweets can give useful insight to advertising companies. Knowing more information about your target audience can help tailor a campaign or a product to appeal to existing and potential consumers.
+
+
+This research paper contains required steps in order to design and implement a forwarder in an embedded, end-to-end data system flow.  DATA PROCESSING USING A FORWARDER, contains its basis in the creation of a forwarder itself. End to End process flow and its subsequent data is used to add context and applicability. We have used key health data metrics in this research to forward, index and display data. This effectively integrates data sets, new intelligence for parsing, effective data sending, visual analytical representation. 
+
+Index Terms—Data Transfer, Forwarder, Indexer, Search, Visualize

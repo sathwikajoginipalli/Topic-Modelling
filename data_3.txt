@@ -1,0 +1,148 @@
+I.	INTRODUCTION
+In today’s world health and welfare are major aspects of life where today’s generation lays emphasis on. The traditional process of getting medical reports is more hospital centric where a person has to visit a medical facility to get basic health tests done.  But the times are changing now; people are becoming more aware of regular monitoring of health statistics and are willing to spend more time and money into it.  So due to these reasons, the traditional hospital-centric framework is not fulfilling the needs of today’s generation.  Using advanced medical applications embedded in mobile devices like smartphones, it is very easy nowadays to collect health statistics like heartbeat rate, temperature etc. This health data collected by the mobile devices can be easily transmitted using a data forwarding mechanism and analyzed at remote health centers. In this project we used a health app called Sattva  to collect basic health data from users. This data is stored in a remote database and forwarded for analysis using a forwarding architecture comprising of forwarders and indexers.
+II.	SYSTEM ARCHITECTURE
+
+Our system consists of three key components: collection of database instances, retrieval of database instances by the forwarder and forwarding of the instances to the indexers. The architecture can be seen in figure 1.
+The database instances are collected in the database from the application in a mobile device.  The instances are then retrieved by the forwarder. Forwarder is a middleware instance that sends desired data from data sources such as a database and passes the data to another instance which could be another forwarder or often an indexer. A Forwarder has peculiar functionality of analyzing data and applying operational searching, indexing and alerting. There are two types of forwarders, Universal Forwarder [1] and Heavy Forwarder [1]. 
+Universal forwarder’s main functionality is to forward small sets of data whereas, the Heavy forwarder, forwards huge amount of data set to the Indexer. Heavy forwarder (sometimes referred as Regular Forwarder) parses the data before forwarding the data. According to Splunk Corporation, parsing data is ‘Breaking the stream of data into individual lines,’ They also note that, ‘identifying, parsing, and setting timestamps, annotating individual events with metadata copied from the source-wide keys, transforming event data and metadata.’ 
+
+ 
+Figure 1
+
+Heavy forwarders can index the data and then forward the data to another instance. The forwarding of the data is done using two exclusive techniques: Load Balancing and Round Robin.
+1)	Techniques Used By Forwarder:
+ 
+Load balancing [3] forwarding is basically intelligent enough to distribute the series of events or data set(s) across indexer(s). Load balancing forwards the events without breaking event boundaries, maintaining the integrity of events by automatically detecting the boundaries.  For example, when sending data through the Universal Forwarder, the data set does not have defined boundaries, for such data the Load balancing is the best technique to be used. On the other hand, Round Robin [3] forwarding sends the data set(s) alternatively to the indexer(s). Depending on the data set, the Round Robin technique is useful for massive amounts of data since the data has defined boundaries. 
+
+ 
+
+2)	Forwarder-Indexer Communication:
+
+The forwarder sends a Heartbeat [7] (request) to the Indexer to know whether the indexer is free to accept the data set or not. After the forwarder sends the heat-beat, the Indexer responds back with a heart-beat indicating that it is free and ready to accept data set(s). If the forwarder does not get back any response from the indexer it switches to other indexer(s) and sends a heart-beat request again. This process continues until the forwarder finds an indexer that is free to accept the data set.
+
+3)	Functionality of an Indexer:
+
+Main function of an indexer is to parse the incoming data and construct the data in a way that could be easily searched. An Indexer consists of three types of nodes that include Master Node, several Peer Nodes, and one or more Search Heads [5]. When the forwarder sends a request to the Indexer to pass the data, the request is sent to the Master Node in the Indexer. The Master Node looks up for the nodes (peer node) that are free to accept the data. Master Node also decides the replication factor of the Peer Node. Replication Factor [5] is the number of Peer Nodes that are created as a copy for the data that comes as a feed to the Indexer. 
+Generally the Replication Factor is 3 by default, which means that there would be three copies of the data that come into the Indexer to be indexed. Making copies in such a way will help to retrieve the data if any of the nodes goes down. If a node goes down, there would be two more copies to restore the data. According to Splunk Corporation, the benefits of index replication are data availability, data fidelity, data recovery, disaster recovery, and search affinity [5]. If the Peer Nodes are busy the Search Heads are also used as the Peer Nodes that makes the indexer more open to accept data for indexing. Basically the Indexer is bridge for the front-end search and back end data dumping.
+
+4)	Search Data and Visualize:
+
+Once the user wants to search the data, the request is sent to the Search Head. The Search Head searches for the data across multiple nodes or multiple indexers. The search head sends a request to the Indexer(s) and then merges the results back to visualize the data to the user. According to Splunk Corporation, the search can happen in three different ways that is ‘deploying one or more Search Heads across multiple peers, deploy multiple search head in a search head cluster and deploy Search Heads as a part of index cluster' [6].
+
+5)	End to End Flow:
+
+ 
+III.	RELATED RESEARCH
+
+An excellent data forwarder must address the shortcomings of a data system and do the following functions using a distributed deployment system [2] : (1) the system should consume the data from different sources like files, networks etc.  (2)  Then the system should parse the data. (3) Then the system should take the parsed data and use the indexers to index it. (4) Lastly, interactive and scheduled searches should be performed on the indexed data.  All these properties of a data forwarder make it an essential mechanism for system dealing with large amount of data.  
+Various components of a data forwarder can perform various functions of the system**. For example, data input can be done by universal forwarder, indexer or heavy forwarder.  Forwarders are mainly of three types[1]: universal, lightweight and heavy forwarder. 
+
+ The most relevant paper to our work are [10] and [11].  In [10], the author proposes a personal mobile health monitoring system called eHealthGuard. In this system, real time health data is collected by a network of sensors planted on the human body and the network of these sensors is called BodyNet. The network provides the data to a digital device like a smartphone; which serve as data forwarders and first-level analyzers. The data collected by the smartphone is then transmitted to a remote health care data center and is analyzed by the center. In [11], the authors build a big data healthcare system for the elderly. This system proposes an intelligent information forwarding system embedded in the mobile phones, which collect data from sensors in wrist bands provided to the users. 
+Another important work related to our project is done by Splunk Enterprise 6.0, which is a part of the project in [11]. They have built a HealthCare Big Data system for analytics purpose of health data collected by different sources. The data is forwarded by an intelligent forwarder from an user’s smartphone and is sent using cellular networks. The data directly goes to a remote health center and is accessible by caregivers. 
+There are other studies which have been developed in this field of research. They are as follows: 
+
+2.1 BlueNurse
+This system was built by the students in University of Queensland, Australia.  This paper [12] proposes the design and implementation of an integrated sensor based and wireless-enabled ElectroCardiogram system.  This system was mainly developed with focus on home based heart patients. 
+
+2.2BlueMedica
+This system provides a secure and easy access to data stored in health information system of hospitals. The nature of the data is sensitive, so a lot of emphasis is laid on the security of the system.  This system was constructed by students in Slovak University of Technology in Bratislava[13].  They built a mobile device called TabletPC for doctors in order to view data related to patients.  The data was gathered by means of wrist bands and is transmitted using Bluetooth.
+
+2.3TeleMedicine
+This paper [14], proposes the development of a mote-based wireless sensor network which leads to the production of a portable ECG system for home-based heart patients. This system aims to be efficient and flexible and does not compromise with the mobility of the patient. 
+
+IV.	IMPLEMENTATION
+
+The main responsibility of a forwarder is to retrieve data from the data source, and forward the data to the indexers. In addition, to make maximize the efficiency of the system, certain functions including data parsing, map reduce, and load balancing should be included in the forwarder. 
+The implementation shows the main function of a forwarder, including how the data is been retrieved, and how the data is been passed to the indexer. The certain data preprocessing technique will also be shown in the implementation; however, it will only include the function that is been called. These functions are been extended in the same class/library, but not in the main function.
+The following is the pseudo implementation of the forwarder:
+
+Parameters:
+	Size_of_Queue
+	Size_of_Item_in_Queue
+	
+Initialize:
+	Queue(Size_of_Queue, Size_of_item_in_Queue)
+	Array Data_summary
+	DataStorage Temp
+
+While(Data not in the Indexers){
+	While(Next Data Source Available && Queue is not frozen){
+		if(Queue is not full){
+			Retrieve Data from Data Source;
+			Set Temp as Data;
+			if(Size of Temp > Size_of_item_in_Queue){
+				if(Size of Temp > Remaining size in Queue){
+					Freeze Queue;
+				}
+				else{
+					Map Reduce Temp;
+					Add all parts of map reduced Temp to Queue;
+				}end if;
+			}
+			else{
+				Add Temp to Queue;
+			}end if;
+		}end if;
+	}end while;
+
+	Number_of_Rotation = 0;
+	While(exist available Indexers || Number_of_Rotation < Size_of_Queue){
+		Number_of_Rotation++;
+		Data_summary = Summary of first item in Queue;
+		Send Data_summary to All Indexers;
+		Receive Matching Score from all Indexers;
+		if(Indexer with highest score is available){
+			Send first item in Queue to this Indexer;
+		}else if(Indexer with second highest score is available){
+			Send first item in Queue to this Indexer;
+		}else{
+			Pop out data from Indexer and put it back into the Queue;
+		}end if;
+	}end while;
+
+	if(temp.size() <= Remaining size in Queue){
+		Release Queue;
+	}end if;
+
+}end while;
+
+In this implementation, a while loop wrap all the content, meaning the forwarder will keep running all the time unless all the data in the data source has been passed to the Indexers. The condition may vary based on the type, volume, and source of the data. There are two while loops in the main function. The first while loop is responsible of retrieving the data from data source. This while loop breaks when the data source is not available, or the queue has been frozen. It is important to adjust the status of the queue based on the size of the incoming data. If the incoming data is larger than the available space of the queue, the queue will be frozen until it has enough size. 
+The map reduce function will be called if the data reaches a certain size of the queue, and it can handle the situation if the data size is larger than the size of the entire queue. It is possible to add other technique to better retrieving and balancing the data. The second while loop is responsible of forwarding the data to the indexers. The while loop keeps running unless there aren’t any available indexers, or the queue has been fully rotated. The parsing function will be called here to get a summary of the data. Then the summary will be signaled to all the indexers. Based on the score indexer returns, the program will decide which indexer the data should be sent to, as the indexer are likely to gather the same type of data to better maneuver the search. 
+If the indexer with top scores are not available, the data will be put back to the end of queue, and the next data will be parsed. This will allow the indexer to gather the similar data while the efficiency will not be hugely affected.
+In the end of the function, an if-statement checks the availability of the queue, and release the queue if available.
+In this pseudo implementation, the functions of retrieving data and forwarding data are realized by two while loops. It is arguable that this implementation may not be the most efficient. Certain balancing technique may help to improve the efficiency by making the two functions rotate. However, this approach with two while loops will realize the basic requirements of a forwarder.
+V.	RESULTS
+
+Mental health is becoming an increased concern in the United States and other developing countries. Increased cases of violent events have emerged all over the nation within the last decade or less. Psychiatrists believe that a large cause of increased population of the younger population with disorders such ADD and ADHD can be a bi-product of GMO foods, increased availability of consumer technology and lack of mental health management. Not to forget the increased marketing and sales of visually violent video games that are easily made available. 
+Sattva, is the world’s first advanced meditation timer and tracker that includes challenges, trophies and guided meditations to inspire meditation every day. Archana Patchirajan, Co-Founder of Hubble has developed Sattva in order to provide incentive for a specific population segment that is invested in promotion of self-development individually and amongst their community.  Sattva’s servers effectively capture the metrics that can be measured and analyzed in order to better understand trends (if any) amongst the subscribers/users of the application. These metrics are, heart rate count, time, location, state of mind score (1/5). The user interface of this application communicates with the Health App on the iOS (iPhone Operating System) devices in order to capture heart rate counts of the user. 
+Data obtained from Sattva has been effective to better understand if and how the state of mind of a person changes after meditating through the application which is a subjective/qualitative metric; however, it also provides insight into understanding of how the physical heart rate count of the individual is impacted by meditating through this application. 
+
+VI.	FIGURES & TABLES
+A.	Sattva Screenshots
+
+ 
+Fig. 1
+
+ 
+Fig. 2
+
+ 
+Fig 3
+
+ 
+Fig. 4
+
+B.	Data Tables(s) & Visual Analytics 
+ 
+
+ 
+
+VII.	FUTURE WORK
+
+    Presently the project is focused on forwarding the real time health data to the forwarder. The database extraction is an important phase of this process. But there might be times, where there might occur a bottle neck due to the varying pace of inputting data and extraction. So in order to nullify this complication, in the future an interactive forwarder can be implemented which will directly access the data from the mobile devices. This can be done by having a database embedded in a forwarder.
+    The Sattva system can also be extended to have different features other than the current ones. It can be manipulated to extract statistics which can act as pre-cursors for patients having disorders. The data analyzed by remote health care facilities can provide ways for early diagnosis of developing disorders and conditions.  In order to make this framework more renowned and at a larger scale an efficient MapReduction model [15]. This model will be able to provide extensive parallelization and will eliminate any synchronization concerns. 
+    Another approach which will be very efficient in the future will be the implementation of intelligent forwarders in order to get more structured and meaningful data.  This can be done by building a system which is more objective/goal oriented.  The distributed data sources can be programmed in a way that it intelligently feed the data according to the objectives of the system. For example, an intelligent system can be built for just athletes in order to collect vital statistics taking different drivers like conditions, geographic location and activity, in the overall equation. This can lead to a development of a forwarder with more context-aware data forwarding qualities.
+VIII.	CONCLUSION
+With the advancement of technology and the amount of data related to every sphere of life, forwarders are a pre-requisite for every system dealing with data. And in this health-conscious generation the amalgamation of the Sattva application with forwarder architecture will prove beneficial to a wide variety of people. We were successfully able to propose and partially build a forwarder framework, which takes input data from the application and is sent through the system. Due to lack of proper resources, we weren’t able to fully implement the architecture. 
+
+This work can be expanded to eventually provide a system which will be a personal health monitoring system.  It will be enormously beneficial in monitoring the different statistics of people suffering with disorders.  
